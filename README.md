@@ -76,7 +76,7 @@ git --version
 No terminal ou Git Bash:
 
 ```sh
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/pmoniz7/Multiagents-AI-GEN.git
 cd seu-repositorio
 ```
 
