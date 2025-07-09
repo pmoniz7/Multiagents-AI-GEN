@@ -16,16 +16,16 @@ export default function Home() {
         <div className="flex w-full">
           <div className="w-1/2 p-4">
             <InputSection
-              title="Technologies"
-              placeholder="Example: Generative AI"
+              title="Tecnologias"
+              placeholder="EX: Generative AI - Para melhor qualidade, escreva em Inglês (vide EX:)"
               data={crewOutput.technologies}
               setData={crewOutput.setTechnologies}
             />
           </div>
           <div className="w-1/2 p-4">
             <InputSection
-              title="Business Areas"
-              placeholder="Example: Customer Service"
+              title="Áreas de Negócios"
+              placeholder="EX: Customer Service - Para melhor qualidade, escreva em Inglês (vide EX:)"
               data={crewOutput.businessareas}
               setData={crewOutput.setBusinessareas}
             />
@@ -40,7 +40,7 @@ export default function Home() {
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded text-sm"
               disabled={crewOutput.running}
             >
-              {crewOutput.running ? "Running..." : "Start"}
+              {crewOutput.running ? "Processando..." : "Início"}
             </button>
           </div>
           <FinalOutput businessareaInfoList={crewOutput.businessareaInfoList} />

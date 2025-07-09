@@ -14,10 +14,10 @@ export const FinalOutput: React.FC<FinalOutputProps> = ({
 
   return (
     <div className="flex flex-col h-full">
-      <h2 className="text-lg font-semibold my-2">Links to Blog Articles and Youtube Videos</h2>
+      <h2 className="text-lg font-semibold my-2">Links para artigos de blog e vídeos do YouTube</h2>
       <div className="flex-grow overflow-auto border-2 border-gray-300 p-2">
         {businessareaInfoList.length === 0 ? (
-          <p>No output yet.</p>
+          <p>Não há Saída</p>
         ) : (
           businessareaInfoList.map((businessarea, index) => (
             <div key={index} className="mb-4">

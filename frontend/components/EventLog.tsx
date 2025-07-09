@@ -13,7 +13,7 @@ export const EventLog: React.FC<EventLogProps> = ({ events }) => {
       <h2 className="text-lg font-semibold mb-2">Log</h2>
       <div className="flex-grow overflow-auto border-2 border-gray-300 p-2">
         {events.length === 0 ? (
-          <p>No events yet.</p>
+          <p>Nenhum evento ainda.</p>
         ) : (
           events.map((event, index) => (
             <div key={index} className="p-2 border-b border-gray-200">

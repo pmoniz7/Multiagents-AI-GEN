@@ -33,6 +33,8 @@ def kickoff_crew(input_id, technologies: list[str], businessareas: list[str]):
         outputs[input_id].events.append(
             Event(timestamp=datetime.now(), data="Crew complete"))
 
+from log_manager import Output  # ou a classe que representa o output
+
 @app.route('/api/multiagent', methods=['POST'])
 def run_crew():
     data = request.json
@@ -42,11 +44,14 @@ def run_crew():
     input_id = str(uuid4())
     technologies = data['technologies']
     businessareas = data['businessareas']
-    
+
+    # Criar saída vazia logo de início
+    with outputs_lock:
+        outputs[input_id] = Output(status='RUNNING', result="", events=[Event(timestamp=datetime.now(), data="Crew started")])
+
     thread = Thread(target=kickoff_crew, args=(input_id, technologies, businessareas))
     thread.start()
-    
-    # return jsonify({"status": "success"}), 200
+
     return jsonify({"input_id": input_id}), 200
 
 
